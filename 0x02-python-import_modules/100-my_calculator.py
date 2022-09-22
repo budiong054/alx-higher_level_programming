@@ -23,4 +23,4 @@ if __name__ == '__main__':
     elif operator == '*':
         print(f"{a:d} * {b:d} = {mul(a, b):d}")
     else:
-        print(f"{a:d} / {b:d} = {div(a, b):f}")
+        print(f"{a:d} / {b:d} = {div(a, b):.0f}")
