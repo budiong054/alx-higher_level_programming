@@ -11,10 +11,6 @@ if __name__ == '__main__':
     a = int(sys.argv[1])
     b = int(sys.argv[3])
     operator = sys.argv[2]
-    if (operator != '+') and (operator != '-') \
-            and (operator != '*') and (operator != '/'):
-        print(f"Unknown operator. Available operators: +, -, * and /")
-        sys.exit(1)
 
     if operator == '+':
         print(f"{a:d} + {b:d} = {add(a, b):d}")
@@ -22,5 +18,8 @@ if __name__ == '__main__':
         print(f"{a:d} - {b:d} = {sub(a, b):d}")
     elif operator == '*':
         print(f"{a:d} * {b:d} = {mul(a, b):d}")
-    else:
+    elif operator == '/':
         print(f"{a:d} / {b:d} = {div(a, b):.0f}")
+    else:
+        print(f"Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
