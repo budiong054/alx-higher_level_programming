@@ -71,7 +71,7 @@ def roman_to_int(roman_string):
     arabic_num = 0
     for char in roman_string:
         if check_roman(char) is None:
-            return
+            return 0
         if check_double_roman(char) != 0 and flag == 0:
             arabic_num += check_roman(char)
             flag = check_double_roman(char)
