@@ -7,6 +7,8 @@
 
 
 class Node:
+    """Node class defines a node of a singly linked list
+    """
     def __init__(self, data, next_node=None):
         """Initialize the class attribute
 
@@ -66,6 +68,8 @@ class Node:
 
 
 class SinglyLinkedList:
+    """SinglyLinkedList class defines a singly linked list
+    """
     def __init__(self):
         """Initializes the instance attribute
         """
