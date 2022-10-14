@@ -1,0 +1,52 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+First import and set up the path
+
+	>>> import os, sys
+	>>> parent = os.path.abspath('.')
+	>>> sys.path.insert(1, parent)
+
+Then, import `text_indentation` from the `5-text_indentation` module
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now the test case:=>
+
+Case 1: When a non string is passed as the text argument
+
+	>>> text_indentation(True)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
+Case 2: When a string is passed as the text argument
+
+	>>> text_indentation("""Quonam modo? Utrum igitur tibi litteram videor an \
+	... totas paginas commovere? Non autem hoc: igitur ne illud quidem. \
+	... Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, \
+	... inquit, finem illi videri nihil dolere.""")
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi litteram videor an totas paginas commovere?
+	<BLANKLINE>
+	Non autem hoc:
+	<BLANKLINE>
+	igitur ne illud quidem.
+	<BLANKLINE>
+	Fortasse id optimum, sed ubi illud:
+	<BLANKLINE>
+
+Case 3: When a string that does not end with `.`, `?` or `:`
+
+	>>> text_indentation("""Sin aliud quid voles, postea. Quae animi affectio suum \
+	... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
+	... beatiorem! Iam ruinas videres""")
+	Sin aliud quid voles, postea.
+	<BLANKLINE>
+	Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+	<BLANKLINE>
+	Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres>>>

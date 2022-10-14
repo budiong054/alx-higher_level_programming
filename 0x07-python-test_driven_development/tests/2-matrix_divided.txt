@@ -22,10 +22,10 @@ case 2: When a `list` contains a type different from `int` or `float`
 
 Case 3: When a non `int` or non `float` is pass as `div` argument
 
-	>>> matrix = [	#+NORMALIZE_SPACE
-		[1, 2, 3],
-		[4, 5, 6]
-	    ] 
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
 	>>> matrix_divided(matrix, "5")
 	Traceback (most recent call last):
 		...

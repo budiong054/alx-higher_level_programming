@@ -1,0 +1,39 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``say_my_name``
+---------------------
+
+First import and set up the path
+
+	>>> import os, sys
+	>>> parent = os.path.abspath('.')
+	>>> sys.path.insert(1, parent)
+
+Then, import ``say_my_name`` from the ``3-say_my_name`` module:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now the test case:=>
+
+Case 1: When the correct input is passed
+
+	>>> say_my_name("Blessing", "Udiong")
+	My name is Blessing Udiong
+
+Case 2: When nothing is passed as the last_name argument
+
+	>>> say_my_name("Anthonia") #doctest: +REPORT_NDIFF
+	My name is Anthonia 
+
+Case 3: When a non string type is passed
+
+	>>> say_my_name(32, "Akpan")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my_name("John", True)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string

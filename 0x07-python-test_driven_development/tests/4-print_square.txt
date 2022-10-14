@@ -1,0 +1,50 @@
+The ``4-print_square`` module
+=============================
+
+Using ``print_square``
+----------------------
+
+First import and set the path
+
+	>>> import os, sys
+	>>> parent = os.path.abspath('.')
+	>>> sys.path.insert(1, parent)
+
+Then, import ``print_square`` from the ``4-print_square`` module:
+
+	>>> print_square = __import__('4-print_square').print_square
+
+Now the test case:=>
+
+Case 1: When size is an int and > 0
+
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+Case 2: When size = 0
+
+	>>> print_square(0)
+
+Case 3: When size < 0
+
+	>>> print_square(-3)
+	Traceback (most recent call last):
+		...
+	ValueError: size must be >= 0
+
+Case 4: When size is a float
+
+	>>> print_square(1.22)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+Case 5: When size is not int
+
+	>>> print_square("4") #doctest: +REPORT_NDIFF
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
