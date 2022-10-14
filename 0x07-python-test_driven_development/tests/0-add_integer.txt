@@ -1,0 +1,46 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+First import and set the path
+
+	>>> import os, sys
+	>>> parent = os.path.abspath('.')
+	>>> sys.path.insert(1, parent)
+
+Then, import ``add_integer`` from the ``0-add_integer`` module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now the test case:=>
+
+Case 1: When a string is passed into the function
+
+	>>> add_integer("a")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Case 2: When nothing is passed to the function
+
+	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Case 3: When a Float is passed into the function
+
+	>>> add_integer(100.3, -2.7)
+	98
+
+Case 4: When an Int and a Float is passed to the function
+
+	>>> add_integer(57, -2.7)
+	55
+
+Case 5: When both input are integers
+
+	>>> add_integer(10, 8)
+	18
