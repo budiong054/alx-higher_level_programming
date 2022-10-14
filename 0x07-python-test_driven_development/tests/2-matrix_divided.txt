@@ -17,8 +17,22 @@ Then, import ``matrix_divided`` from the ``2-matrix_divided`` module:
 Now the test case:=>
 
 Case 1: When a non list type is passed as a `matrix` argument
+	
+	>>> matrix_divided(True, 4)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 case 2: When a `list` contains a type different from `int` or `float`
+
+	>>> matrix = [
+	... 	[1, "2", "a"],
+	...	[3, 4, 5]
+	... ]
+	>>> matrix_divided(matrix, 4)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Case 3: When a non `int` or non `float` is pass as `div` argument
 
