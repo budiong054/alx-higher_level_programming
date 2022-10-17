@@ -11,17 +11,28 @@ class Square:
         Args:
             size (:obj:`int`): The size of the square.
         """
-        if type(size) != int:
-            print("size must be an integer", end="")
-            raise TypeError
-        else:
-            self.__size = size
-        if size < 0:
-            print("size must be >= 0", end="")
-            raise ValueError
+        self.size = size
 
     def __str__(self):
         return str(self.__size * self.__size)
+
+    def __lt__(self, other):
+        return self.size < other.size
+
+    def __le__(self, other):
+        return self.size <= other.size
+
+    def __ge__(self, other):
+        return self.size >= other.size
+
+    def __gt__(self, other):
+        return self.size > other.size
+
+    def __eq__(self, other):
+        return self.size == other.size
+
+    def __ne__(self, other):
+        return self.size != other.size
 
     @property
     def size(self):
