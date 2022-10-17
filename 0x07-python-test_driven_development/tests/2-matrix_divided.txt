@@ -4,13 +4,7 @@ The ``2-matrix_divided`` module
 Using ``matrix_divided``
 ------------------------
 
-First import and set the path
-
-	>>> import os, sys
-	>>> parent = os.path.abspath('.')
-	>>> sys.path.insert(1, parent)
-
-Then, import ``matrix_divided`` from the ``2-matrix_divided`` module:
+First import ``matrix_divided`` from the ``2-matrix_divided`` module:
 
 	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 

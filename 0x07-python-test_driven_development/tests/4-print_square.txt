@@ -4,13 +4,7 @@ The ``4-print_square`` module
 Using ``print_square``
 ----------------------
 
-First import and set the path
-
-	>>> import os, sys
-	>>> parent = os.path.abspath('.')
-	>>> sys.path.insert(1, parent)
-
-Then, import ``print_square`` from the ``4-print_square`` module:
+First import ``print_square`` from the ``4-print_square`` module:
 
 	>>> print_square = __import__('4-print_square').print_square
 

@@ -9,6 +9,7 @@ For example,
 30
 """
 
+
 def add_integer(a, b=98):
     """Return the sum of the two integers
 

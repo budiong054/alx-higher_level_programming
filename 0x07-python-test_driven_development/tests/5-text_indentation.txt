@@ -4,13 +4,7 @@ The ``5-text_indentation`` module
 Using ``text_indentation``
 --------------------------
 
-First import and set up the path
-
-	>>> import os, sys
-	>>> parent = os.path.abspath('.')
-	>>> sys.path.insert(1, parent)
-
-Then, import `text_indentation` from the `5-text_indentation` module
+First import `text_indentation` from the `5-text_indentation` module
 
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
@@ -28,7 +22,7 @@ Case 2: When a string is passed as the text argument
 	>>> text_indentation("""Quonam modo? Utrum igitur tibi litteram videor an \
 	... totas paginas commovere? Non autem hoc: igitur ne illud quidem. \
 	... Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, \
-	... inquit, finem illi videri nihil dolere.""")
+	... inquit, finem illi videri nihil dolere.""") #doctest: +REPORT_NDIFF
 	Quonam modo?
 	<BLANKLINE>
 	Utrum igitur tibi litteram videor an totas paginas commovere?
@@ -38,6 +32,10 @@ Case 2: When a string is passed as the text argument
 	igitur ne illud quidem.
 	<BLANKLINE>
 	Fortasse id optimum, sed ubi illud:
+	<BLANKLINE>
+	Plus semper voluptatis?
+	<BLANKLINE>
+	Teneo, inquit, finem illi videri nihil dolere.
 	<BLANKLINE>
 
 Case 3: When a string that does not end with `.`, `?` or `:`
@@ -49,4 +47,4 @@ Case 3: When a string that does not end with `.`, `?` or `:`
 	<BLANKLINE>
 	Quae animi affectio suum cuique tribuens atque hanc, quam dico.
 	<BLANKLINE>
-	Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres>>>
+	Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres

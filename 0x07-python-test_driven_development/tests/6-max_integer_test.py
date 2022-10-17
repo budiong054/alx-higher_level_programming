@@ -29,5 +29,5 @@ class TestMaxInteger(unittest.TestCase):
         """
         # when the list contains a string
         self.assertRaises(TypeError, max_integer, [-1, "5", "6", 7, -2])
-        #when a list contains a list
+        # when a list contains a list
         self.assertRaises(TypeError, max_integer, [2, 4, [8, 9], 8])

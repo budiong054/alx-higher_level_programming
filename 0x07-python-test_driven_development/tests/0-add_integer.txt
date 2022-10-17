@@ -4,13 +4,7 @@ The ``0-add_integer`` module
 Using ``add_integer``
 ---------------------
 
-First import and set the path
-
-	>>> import os, sys
-	>>> parent = os.path.abspath('.')
-	>>> sys.path.insert(1, parent)
-
-Then, import ``add_integer`` from the ``0-add_integer`` module:
+First import ``add_integer`` from the ``0-add_integer`` module:
 
 	>>> add_integer = __import__('0-add_integer').add_integer
 
