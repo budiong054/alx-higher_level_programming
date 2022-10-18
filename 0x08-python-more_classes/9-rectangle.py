@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is ``7-rectangle`` module
+"""This is ``8-rectangle`` module
 
 This module contains one class ``Rectangle``
 """
@@ -32,6 +32,18 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    def __lt__(self, other):
+        return self.area() < other.area()
+
+    def __le__(self, other):
+        return self.area() <= other.area()
+
+    def __gt__(self, other):
+        return self.area() > other.area()
+
+    def __ge__(self, other):
+        return self.area() >= other.area()
 
     @property
     def width(self):
@@ -79,3 +91,22 @@ class Rectangle:
             return 0
         else:
             return 2 * (self.__width + self.__height)
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the biggest rectangle based on the area
+        """
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        elif rect_2 <= rect_1:
+            return rect_1
+        else:
+            return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns a new Rectangle instance with `width == height == size`
+        """
+        return cls(size, size)
