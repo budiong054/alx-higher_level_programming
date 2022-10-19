@@ -21,6 +21,8 @@ class Rectangle:
             return ""
         rectangle = ""
         for i in range(self.height):
+            if type(self.print_symbol) is not str:
+                self.print_symbol = str(self.print_symbol)
             rectangle += "{}".format(self.width * self.print_symbol)
             if i != self.height - 1:
                 rectangle += '\n'
