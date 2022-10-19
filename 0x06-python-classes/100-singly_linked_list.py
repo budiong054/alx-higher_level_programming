@@ -79,10 +79,14 @@ class SinglyLinkedList:
         """Print the entire list in stdout, one node number by line
         """
         current = self.__head
-        while current.next_node is not None:
-            print(current.data)
+        output = ""
+        while current is not None:
+            # print(current.data)
+            output += "{}".format(current.data)
             current = current.next_node
-        return str(current.data)
+            if current is not None:
+                output += '\n'
+        return output
 
     def sorted_insert(self, value):
         """Inserts a new Node into the correct sorted position in
@@ -106,7 +110,7 @@ class SinglyLinkedList:
                     new_node.next_node = temp
                     prev.next_node = new_node
                     break
-                elif value > temp.data and not temp.next_node:
+                elif value >= temp.data and not temp.next_node:
                     temp.next_node = new_node
                     break
                 else:
