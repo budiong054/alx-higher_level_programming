@@ -45,3 +45,15 @@ Case 6: When NaN is pssed
 	Traceback (most recent call last):
 		...
 	ValueError: cannot convert float NaN to integer
+
+Case 7: When Float overflow occurs
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
+
+Case 8: When missing 1 argument
+
+	>>> add_integer(8)
+	106
