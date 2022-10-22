@@ -17,7 +17,7 @@ def add_integer(a, b=98):
         a(:obj:`int`): The first integer
         b(:obj:`int`): The second integer
     """
-    if type(a) not in [int, float]:
+    if a is None or type(a) not in [int, float]:
         raise TypeError("a must be an integer")
     elif type(b) not in [int, float]:
         raise TypeError("b must be an integer")

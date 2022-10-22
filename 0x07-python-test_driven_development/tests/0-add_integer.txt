@@ -38,3 +38,10 @@ Case 5: When both input are integers
 
 	>>> add_integer(10, 8)
 	18
+
+Case 6: When NaN is pssed
+
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
