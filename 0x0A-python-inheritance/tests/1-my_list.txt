@@ -1,0 +1,26 @@
+The ``1-my_list`` module
+========================
+
+Using ``MyList`` class
+----------------------
+
+Case 1: When we have unsorted list
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList((9, 5, 6, 2, 1, 8, 7))
+	>>> my_list.print_sorted()
+	[1, 2, 5, 6, 7, 8, 9]
+
+Case 2: When we have negative integers
+
+	>>> my_list = MyList((9, 7, -2, -5))
+	>>> my_list.print_sorted()
+	[-5, -2, 7, 9]
+
+Case 3: When a str is passed
+
+	>>> my_list.append("-4")
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+		...
+	TypeError: '<' not supported between instances of 'str' and 'int'

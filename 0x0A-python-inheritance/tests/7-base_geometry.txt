@@ -1,0 +1,46 @@
+The ``7-base_geometry`` module
+==============================
+
+Using ``BaseGeometry`` class
+----------------------------
+
+Case 1: When a negative integer is passed
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("radius", -7)
+	Traceback (most recent call last):
+		...
+	ValueError: radius must be greater than 0
+
+Case 2: When a boolen is passed
+
+	>>> bg.integer_validator("radius", True)
+	Traceback (most recent call last):
+		...
+	TypeError: radius must be an integer
+
+Case 3: When a positive integer is passed
+
+	>>> bg.integer_validator("diameter", 16)
+
+Case 4: When nothing is passed
+
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Case 5: When missing one argument
+
+	>>> bg.integer_validator("radius")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Case 6: When a float is passed as value argument
+
+	>>> bg.integer_validator("age", 4.5)
+	Traceback (most recent call last):
+		...
+	TypeError: age must be an integer
