@@ -30,7 +30,7 @@ class Rectangle(Base):
             method
         """
         return f"[Rectangle] ({self.id:d}) {self.x:d}/{self.y:d}"\
-                f" - {self.width:d}/{self.height:d}"
+            f" - {self.width:d}/{self.height:d}"
 
     @property
     def width(self):
