@@ -114,7 +114,7 @@ class Rectangle(Base):
         for row in range(self.height):
             print("{}{}".format(self.x * " ", self.width * '#'))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update an argument to each attribute
         """
         for index, arg in enumerate(args):
@@ -130,3 +130,29 @@ class Rectangle(Base):
                 self.y = arg
             else:
                 break
+
+        if len(args) == 0:
+            args_tuple = ("id", "width", "height", "x", "y")
+            for key, value in kwargs.items():
+                if key in args_tuple:
+                    if key == "id":
+                        self.id = value
+                    elif key == "width":
+                        self.width = value
+                    elif key == "height":
+                        self.height = value
+                    elif key == "x":
+                        self.x = value
+                    else:
+                        self.y = value
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a `Rectangle`
+        """
+        attr_dict = dict()
+        attr_dict['x'] = self.x
+        attr_dict['y'] = self.y
+        attr_dict['id'] = self.id
+        attr_dict['height'] = self.height
+        attr_dict['width'] = self.width
+        return attr_dict
