@@ -118,3 +118,10 @@ class TestSquare(unittest.TestCase):
             s4.update(size=0)
         with self.assertRaises(ValueError):
             s4.update(x=3, y=-1)
+
+    def test_square_to_dictionary(self):
+        """Test square `to_dictionary` method for correct output
+        """
+        s5 = Square(10, 2, 1, 9)
+        self.assertEqual(s5.to_dictionary(),
+                         {'id': 9, 'x': 2, 'size': 10, 'y': 1})

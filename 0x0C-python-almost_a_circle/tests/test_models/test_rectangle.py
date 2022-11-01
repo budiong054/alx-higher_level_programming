@@ -141,3 +141,10 @@ class TestRectangle(unittest.TestCase):
             Rectangle(2, 5.5).area()
         with self.assertRaises(TypeError):
             Rectangle([3], {2}).area()
+
+    def test_rectangle_to_dictionary(self):
+        """Test rectangle `to_dictionary` method for correct output
+        """
+        r_4 = Rectangle(10, 2, 1, 9, 12)
+        self.assertEqual(r_4.to_dictionary(),
+                         {'x': 1, 'y': 9, 'id': 12, 'height': 2, 'width': 10})
