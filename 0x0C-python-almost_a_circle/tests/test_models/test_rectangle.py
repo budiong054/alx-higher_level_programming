@@ -47,7 +47,7 @@ class TestRectangle(unittest.TestCase):
         """
         self.assertEqual(str(Rectangle(4, 6, 2, 1, 12)),
                          "[Rectangle] (12) 2/1 - 4/6")
-        self.assertEqual(str(Rectangle(4, 6)), "[Rectangle] (13) 0/0 - 4/6")
+        self.assertEqual(str(Rectangle(4, 6)), "[Rectangle] (22) 0/0 - 4/6")
 
     def test_rectangle_str_raises(self):
         """Test if __str__ raises error
@@ -72,22 +72,62 @@ class TestRectangle(unittest.TestCase):
         """Test the rectangle attributes if its raises error
             if given a bad value
         """
+        r1 = Rectangle(4, 6, 2, 4)
         with self.assertRaises(AttributeError):
-            r1 = Rectangle(4, 6, 2, 4)
             r1.__width
+        with self.assertRaises(AttributeError):
             r1.__height
+        with self.assertRaises(AttributeError):
             r1.__x
+        with self.assertRaises(AttributeError):
             r1.__y
         with self.assertRaises(ValueError):
             Rectangle(-3, 4, 0, 0)
+        with self.assertRaises(ValueError):
             Rectangle(1, 0)
+        with self.assertRaises(ValueError):
             Rectangle(2, 1, -2)
         with self.assertRaises(TypeError):
             Rectangle("3", 2)
+        with self.assertRaises(TypeError):
             Rectangle(2, True)
+        with self.assertRaises(TypeError):
             Rectangle(2, 3, {}, 1)
+        with self.assertRaises(TypeError):
             Rectangle(1, [4])
-            Rectangle(4, 2, {x: 2}, {y: 3})
+        with self.assertRaises(TypeError):
+            Rectangle(4, 2, {2}, {3})
+
+    def test_rectangle_update(self):
+        """Test the rectangle update method for correct output
+        """
+        r_1 = Rectangle(10, 10, 10, 10)
+        r_1.update(89)
+        self.assertEqual(str(r_1), "[Rectangle] (89) 10/10 - 10/10")
+        r_1.update(20, 3, 4, 5, 6)
+        self.assertEqual(str(r_1), "[Rectangle] (20) 5/6 - 3/4")
+        r_1.update(height=1)
+        self.assertEqual(str(r_1), "[Rectangle] (20) 5/6 - 3/1")
+        r_1.update(width=5, id=15, y=4)
+        self.assertEqual(str(r_1), "[Rectangle] (15) 5/4 - 5/1")
+
+    def test_rectangle_update_raises(self):
+        """Test rectangle update method if its raises the correct
+            error
+        """
+        r_2 = Rectangle(10, 20, 30, 30)
+        with self.assertRaises(ValueError):
+            r_2.update(67, -3)
+        with self.assertRaises(TypeError):
+            r_2.update(67, 4, 5, "5")
+        with self.assertRaises(TypeError):
+            r_2.update(67, True)
+        with self.assertRaises(ValueError):
+            r_2.update(height=0)
+        with self.assertRaises(ValueError):
+            r_2.update(height=2, x=-1)
+        with self.assertRaises(TypeError):
+            r_2.update(height=True)
 
     def test_rectangle_area_raises_error(self):
         """Test if the rectangle method area raises error
@@ -95,6 +135,9 @@ class TestRectangle(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             Rectangle("3", 3).area()
+        with self.assertRaises(TypeError):
             Rectangle(4, True).area()
+        with self.assertRaises(TypeError):
             Rectangle(2, 5.5).area()
+        with self.assertRaises(TypeError):
             Rectangle([3], {2}).area()
