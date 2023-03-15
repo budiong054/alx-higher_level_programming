@@ -1,19 +1,13 @@
 #!/usr/bin/node
 // This script searches the second biggest integer in the list of arguments
 
-const argv = process.argv;
-let secondMax;
-let max;
+const [, , ...args] = process.argv;
 
-if (argv.length <= 3) {
+const array = [...new Set(args.map(el => parseInt(el)))];
+
+if (array.length <= 1) {
   console.log(0);
 } else {
-  max = secondMax = parseInt(argv[2]);
-  for (let i = 3; i < argv.length; i++) {
-    if (max <= parseInt(argv[i])) {
-      secondMax = max;
-      max = parseInt(argv[i]);
-    }
-  }
-  console.log(secondMax);
+  array.sort();
+  console.log(array[array.length - 2]);
 }
