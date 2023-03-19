@@ -6,6 +6,7 @@ from model_state import Base
 
 
 class City(Base):
+    """City object representation of the cities table in the database""" 
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True)
