@@ -16,16 +16,17 @@ if __name__ == '__main__':
     engine = create_engine(f"mysql+mysqldb://{user}:{passwd}@localhost/{db}")
 
     Base.metadata.create_all(engine)
-    
+
     Session = sessionmaker(bind=engine)
     session = Session()
 
     california = State(name="California")
-    
+
     session.add(california)
     session.commit()
 
-    california = session.query(State).filter(State.name == "California").first()
+    california = session.query(State)\
+        .filter(State.name == "California").first()
 
     san_francisco = City(name="San Francisco", state=california)
     session.add(san_francisco)
