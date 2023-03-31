@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-replace="\#\!\/usr\/bin\/env bash"
-
-new="\#\!\/bin\/bash"
-
-sed -i "s/$replace/$new/" *.sh
