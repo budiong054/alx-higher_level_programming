@@ -11,7 +11,7 @@ if __name__ == '__main__':
     q = ""
     if len(sys.argv) >= 2:
         q = sys.argv[1]
-    response = requests.post(url, data={'q': q})
+    response = requests.post(url, params={'q': q})
     json = res.json()
     if len(json) == 0:
         print("No result")
