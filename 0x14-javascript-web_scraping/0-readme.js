@@ -5,8 +5,8 @@ const fs = require('fs');
 const file = process.argv[2];
 
 if (file) {
-	fs.readFile(file, 'utf-8', (err, data) => {
-		if (err) console.error(err);
-		console.log(data);
-	});
+  fs.readFile(file, 'utf-8', (err, data) => {
+    if (err) console.error(err);
+    console.log(data);
+  });
 }
