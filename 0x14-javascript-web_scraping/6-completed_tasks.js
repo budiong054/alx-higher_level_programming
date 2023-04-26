@@ -17,7 +17,9 @@ request(url, (err, res, body) => {
         completeTask++;
       }
     }
-    obj[i] = completeTask;
+    if (completeTask) {
+      obj[i] = completeTask;
+    }
   }
   console.log(obj);
 });
